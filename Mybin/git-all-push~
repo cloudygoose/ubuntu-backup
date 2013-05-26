@@ -1,7 +1,6 @@
 #! /bin/bash
 #push all my rea pos to github
 #ubuntu-backup htx_notes Fatworm
-set -x
 if test "$1"="ubuntu-backup"
 then
 	gitDir=/home/slhome/txh18/unimportant/ubuntu-backup
