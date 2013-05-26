@@ -2,15 +2,20 @@
 #push all my rea pos to github
 #ubuntu-backup htx_notes Fatworm
 set -x
+if test "$1"="ubuntu-backup"
+then
+	gitDir=/home/slhome/txh18/unimportant/ubuntu-backup
+fi
+if test "$1"="htx_notes"
+then
+	gitDir=/home/slhome/txh18/workspace/htx_notes
+fi
+if test "$1"="fatworm"
+then
+	gitDir=/home/slhome/txh18/workspace/Fatworm/src
+fi
+echo now gitting $gitDir
 cd /home/slhome/txh18/unimportant/ubuntu-backup
 git add .
-git commit -a -m 'git-all-push'
-git push origin master
-cd /home/slhome/txh18/workspace/htx_notes
-git add .
-git commit -a -m 'git-all-push'
-git push origin master
-cd /home/slhome/txh18/workspace/Fatworm/src
-git add .
-git commit -a -m 'git-all-push'
+git commit -a -m 'done-by-git-push-script'
 git push origin master
