@@ -1,7 +1,16 @@
 #! /bin/bash
 #push all my rea pos to github
+#ubuntu-backup htx_notes Fatworm
+set -x
 cd /home/slhome/txh18/unimportant/ubuntu-backup
 git add .
 git commit -a -m 'git-all-push'
 git push origin master
-
+cd /home/slhome/txh18/workspace/htx_notes
+git add .
+git commit -a -m 'git-all-push'
+git push origin master
+cd /home/slhome/txh18/workspace/Fatworm
+git add .
+git commit -a -m 'git-all-push'
+git push origin master
