@@ -1,0 +1,7 @@
+#! /bin/bash
+#push all my rea pos to github
+cd /home/slhome/txh18/unimportant/ubuntu-backup
+git add .
+git commit -a -m 'git-all-push'
+git push origin master
+
