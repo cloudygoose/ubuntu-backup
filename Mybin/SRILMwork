@@ -2,6 +2,8 @@
 #please use this shell as
 #. SRILMwork
 #so that the cd command will take effect on the outside shell!
+gedit /home/slhome/txh18/workspace/SRILM/train_tg_prune.sh &
 gedit /home/slhome/txh18/workspace/htx_notes/SRILM/SRILM_notes &
+nautilus /home/slhome/txh18/workspace/htx_notes/SRILM
 cd /home/slhome/txh18/workspace/SRILM
 

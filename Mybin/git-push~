@@ -7,15 +7,15 @@ gitDir="aaa"
 
 if [ $inp = ubuntu-backup ];then
 	echo '!!!'
-	$gitDir='/home/slhome/txh18/unimportant/ubuntu-backup'
+	gitDir='/home/slhome/txh18/unimportant/ubuntu-backup'
 fi
 
 if [ $inp = htx_notes ];then
-	$gitDir='/home/slhome/txh18/workspace/htx_notes'
+	gitDir='/home/slhome/txh18/workspace/htx_notes'
 fi
 
 if [ $inp = fatworm ];then
-	$gitDir='/home/slhome/txh18/workspace/Fatworm/src'
+	gitDir='/home/slhome/txh18/workspace/Fatworm/src'
 fi
 
 echo now gitting $gitDir
