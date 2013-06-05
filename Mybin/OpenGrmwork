@@ -1,0 +1,8 @@
+#! /bin/bash
+#please use this shell as
+#. OpenGrmwork
+#so that the cd command will take effect on the outside shell!
+sublime-text-2 /home/slhome/txh18/workspace/htx_notes/OpenGrm/OpenGrm &
+nautilus /home/slhome/txh18/workspace/htx_notes/OpenGrm
+cd /home/slhome/txh18/workspace/OpenGrm
+

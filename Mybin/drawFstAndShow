@@ -1,0 +1,11 @@
+#! /bin/bash
+if [ $# = 0 ]
+then
+	echo usage : fstdraw .fst to .dot then dot it to .ps then xdg-open it;
+	exit 1;
+fi
+fstdraw --isymbols=isyms.txt --osymbols=osyms.txt $1.fst $1.dot
+dot -Tps $1.dot>$1.ps
+rm $1.dot
+xdg-open $1.ps
+
