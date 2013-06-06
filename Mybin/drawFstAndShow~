@@ -1,11 +1,14 @@
 #! /bin/bash
 if [ $# = 0 ]
 then
-	echo usage : fstdraw .fst to .dot then dot it to .ps then xdg-open it;
+	echo usage : fstdraw \$1 with --isymbols=\$2 --osymbols=\$3 to .dot then dot it to .ps then xdg-open it;
 	exit 1;
 fi
-fstdraw --isymbols=isyms.txt --osymbols=osyms.txt $1.fst $1.dot
-dot -Tps $1.dot>$1.ps
+set -x
+isfile=${2:-isyms.txt}
+osfile=${3:-osyms.txt}
+fstdraw --isymbols=$isfile --osymbols=$osfile $1 $1.dot
+dot -Tpng $1.dot > $1.png
 rm $1.dot
-xdg-open $1.ps
+xdg-open $1.png
 

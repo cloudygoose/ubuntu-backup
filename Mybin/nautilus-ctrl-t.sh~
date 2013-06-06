@@ -1,0 +1,16 @@
+#! /bin/bash
+pid=$(pidof nautilus)
+if [ -z $pid ]; then
+    nautilus $1 &
+else  
+    # save old clipboard value
+    oldclip="$(xclip -o -sel clip)"
+
+    echo 111 $1;
+    #echo -n $1 | xclip -i -sel clip
+    wmctrl -xF -R nautilus.Nautilus && xdotool key "ctrl+t" "ctrl+l" && xdotool type "${1}" && xdotool key Return
+    #wmctrl -xF -R nautilus.Nautilus && xdotool key ctrl+t && xdotool key ctrl+l ctrl+v && xdotool key Return
+
+    # Restore old clipboard value
+    #echo -n "$oldclip" | xclip -i -sel clip
+fi
