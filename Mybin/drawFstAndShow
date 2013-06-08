@@ -2,13 +2,32 @@
 if [ $# = 0 ]
 then
 	echo usage : fstdraw \$1 with --isymbols=\$2 --osymbols=\$3 to .dot then dot it to .ps then xdg-open it;
+	echo para : -png or -ps
 	exit 1;
 fi
+
 set -x
+oformat="ps"
+i=1
+for para in "$@";
+do
+	if [ "x$para" = "x-png" ] 
+	then
+		oformat="png";
+		shift $i;
+		break;
+	elif [ "x$para" = "x-ps" ]
+	then
+		shift $i;
+		break;
+	fi
+	i=$(i+1);
+done
+
 isfile=${2:-isyms.txt}
 osfile=${3:-osyms.txt}
 fstdraw --isymbols=$isfile --osymbols=$osfile $1 $1.dot
-dot -Tpng $1.dot > $1.png
+dot -T$oformat $1.dot > $1.$oformat
 rm $1.dot
-xdg-open $1.png
+xdg-open $1.$oformat
 
